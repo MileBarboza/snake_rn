@@ -1,24 +1,11 @@
-import React from 'react';
-import { StyleSheet, Text, View,} from 'react-native';
+import "react-native-gesture-handler"  
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import Game from './src/components/Game';
 
-function App(): JSX.Element {
+export default function App(): JSX.Element {
   return (
-     <View style={styles.container}>
-        <Text style={styles.txt}>Snake🐍</Text>
-     </View>
-  );
+    <GestureHandlerRootView style={{ flex:1 }}> 
+      <Game/> 
+    </GestureHandlerRootView>
+  )
 }
-
-const styles = StyleSheet.create({
-container:{
-  flex:1,
-  justifyContent:'center',
-  alignItems:'center'
-},
-txt:{
-  fontSize: 25,
-  color:"#303030"
-}
-});
-
-export default App;
