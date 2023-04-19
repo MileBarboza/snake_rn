@@ -5,6 +5,9 @@ import colors from '../styles/colors'
 import { Coordinate, Direction, GestureEventType } from '../types/types'
 import Snake from './Snake'
 import { checkGameOver } from '../utils/checkGameOver'
+import Food from './Food'
+import { checkEatsFood } from '../utils/checkEatsFood'
+import { randomFoodPosition } from '../utils/randomFoodPosition'
 
 const SNAKE_INITIAL_POSITION = [{ x: 5, y: 5 }];
 const FOOD_INITIAL_POSITION = { x: 5, y: 20 };
@@ -53,7 +56,13 @@ if (checkGameOver(snakeHead, GAME_BOUNDS)) {
       break; 
   }
   
-  setSnake([newHead, ...snake.slice(0, -1)])
+  if (checkEatsFood(newHead, food, 2)) { 
+    setFood(randomFoodPosition(GAME_BOUNDS.xMax, GAME_BOUNDS.yMax)) 
+    setSnake([newHead, ...snake]); 
+  } else {
+    setSnake([newHead, ...snake.slice(0, -1)]) 
+  }
+
 }
 
 const handleGesture = (event: GestureEventType) => {
@@ -79,6 +88,7 @@ const handleGesture = (event: GestureEventType) => {
       <SafeAreaView style={styles.container}>
          <View style={styles.boundaries}>
             <Snake snake={snake} />
+            <Food x={food.x} y={food.y}/>
          </View>
       </SafeAreaView>
     </PanGestureHandler>
