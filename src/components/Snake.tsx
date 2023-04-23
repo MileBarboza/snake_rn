@@ -1,6 +1,6 @@
  import React, { Fragment } from 'react'
+ import { StyleSheet, View } from 'react-native';
 import { Coordinate } from '../types/types'
-import { StyleSheet, View } from 'react-native';
 import colors from '../styles/colors';
  
 interface SnakeProps {
