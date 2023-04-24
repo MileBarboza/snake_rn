@@ -1,18 +1,17 @@
 
-import { StyleSheet, Text } from "react-native";
+import { ImageBackground, StyleSheet } from "react-native";
 import { Coordinate } from "../types/types";
 
 export default function Food({ x, y }:Coordinate):JSX.Element { 
-    return <Text style={[{top: y * 10, left: x * 10}, styles.food]}>🐀</Text>; 
+const background = require("../../assets/img/rat.png")
+
+  return <ImageBackground source={background} resizeMode="cover" style={[{top: y * 10, left: x * 10}, styles.food]} />
 }
 
 const styles = StyleSheet.create({
   food: {
-    width:25,
-    height:25,
-    fontSize:20,
-    borderRadius:7,
+    width:22,
+    height:22,
     position:'absolute',
-    color:'#666'
   }
 })

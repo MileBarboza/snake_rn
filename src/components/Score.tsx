@@ -8,7 +8,7 @@ interface ScoreProps {
 
 export default function Score({score}:ScoreProps):JSX.Element { 
   return (
-    <Text style={{fontSize:22, fontWeight:'bold', color: colors.primary}}>
+    <Text style={{fontSize:30, fontWeight:'bold', color: colors.primary, textAlign:'center'}}>
         {score}🏆 
     </Text> 
   )

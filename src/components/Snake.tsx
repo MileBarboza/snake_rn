@@ -4,7 +4,7 @@ import { Coordinate } from '../types/types'
 import colors from '../styles/colors';
  
 interface SnakeProps {
-    snake: Coordinate[]; 
+  snake: Coordinate[]; 
 }
 
  export default function Snake({snake}: SnakeProps): JSX.Element {
@@ -23,9 +23,9 @@ interface SnakeProps {
  
  const styles = StyleSheet.create ({
   snake:{
-    width:15,
-    height:15,
-    borderRadius:7,
+    width:20,
+    height:20,
+    borderRadius:11,
     backgroundColor: colors.primary,
     position:'absolute',
   }
