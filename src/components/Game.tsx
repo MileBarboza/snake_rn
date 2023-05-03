@@ -16,8 +16,8 @@ import { randomFoodPosition } from '../utils/randomFoodPosition'
 
 const SNAKE_INITIAL_POSITION = [{ x: 5, y: 5 }];
 const FOOD_INITIAL_POSITION = { x: 5, y: 20 };
-const GAME_BOUNDS = { xMin: 0, xMax: 37, yMin: 0, yMax: 74 }; 
-const MOVE_INTERVAL = 60; 
+const GAME_BOUNDS = { xMin: 0, xMax: 37, yMin: 0, yMax: 72 }; 
+const MOVE_INTERVAL = 40; 
 const SCORE_INCREMENT = 10; 
 
 export default function Game(): JSX.Element {  
@@ -114,7 +114,7 @@ const StartGame = () => {
 
 let content = <Game />;
 if (isStarted) {
-  content = <Start  />;
+  content = <Start />;
 }
 
   return (
